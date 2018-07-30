@@ -1,17 +1,59 @@
 <html>
   <head>
+    <title>Game Inspector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
+
+    <script id="results-template" type="text/x-handlebars-template">
+      <section id="results-list">
+        <a href="game/{{id}}">{{name}}</a>
+      </section>
+    </script>
   </head>
   <body>
 
-  </body>
+  <header>
+    <h1>GAME INSPECTOR</h1>
+    <!-- Nav here drop down (hamburger menu) for HOME and ABOUT -->
+    <!-- Header/Nav will be the same across all pages of app -->
 
+  </header>
+
+  <main>
+    <!-- All Pages: section paragraph for intro on each page  -->
+    <section id="search-input">
+      <form action="#" id="search-bar">
+        <label>
+          <input type="text" name="title" placeholder="Game Title" required>
+        </label>
+        <button type="submit">Search Games</button>    
+    </section>
+    <section>
+      <div id="landing">landing Div</div>
+      <div id="results">Results Div</div>
+      <div id="details">Details Div</div>
+    </section>
+    <!-- Details Page: Main Content here... description of the game (title, release date, latest update, description, developers) -->
+    <!-- All Pages: main content for that page -->
+    <!-- Home page: first box is drop down including platforms for user to choose from  -->
+    <!-- Home page: second box is text input box to search for game (auto complete?STRETCH) -->
+    <!--  -->
+    <!-- Search/Go Button by input box -->
+
+  </main>
+
+  <footer>
+    <!-- Footer of the page goes here, add linkedIn links (maybe copyright to look fancy) -->
+    <!-- Footer will be the same across all pages -->
+
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.8.6/page.min.js"></script>
+
   <script src="scripts/models/games.js" type="text/javascript"></script>
   <script src="scripts/views/details-view.js" type="text/javascript"></script>
   <script src="scripts/views/index-view.js" type="text/javascript"></script>
@@ -24,4 +66,5 @@
   <!-- <script src="scripts/models/##" type="text/javascript"></script>
   <script src="scripts/views/##" type="text/javascript"></script> -->
   <!-- These script links are incompete. They are templates for future script files -->
+  </body>
 </html>
