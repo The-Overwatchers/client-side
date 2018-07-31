@@ -46,6 +46,29 @@ input {
   outline: #584948;
 }
 
-.icon-menu {
-  color: #fff;
+
+#icon-list ul {
+  display: none;
+  display: block;
+  color: #ffaa2f;
+  background-color: #584948;
+  text-align: right;
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  margin-right: 70px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffaa2f;
+  font-size: 20px;
+}
+
+.icon-menu3:before {
+  color: #ffaa2f;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 47px;
 }

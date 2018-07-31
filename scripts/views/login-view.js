@@ -9,6 +9,11 @@ var app = app || {};
     $('#inputLogin').empty();
     $('#inputRegister').empty();
     module.showOnly('.login');
+    $('#formRegister').on('submit', function(event) {
+      event.preventDefault();
+      let newUserName = $('#inputRegister').val();
+      app.Users.registerUser(newUserName);
+    })
   }
 
   module.loginView = loginView;
