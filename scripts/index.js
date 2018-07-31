@@ -12,10 +12,16 @@ var app = app || {};
   module.ENVIRONMENT = {
     apiUrl: module.isProduction ? productionApiUrl : developmentApiUrl
   };
+
   module.showOnly = (selector) => {
-    $('.hide-all').hide();
+    $('section').hide();
     $(selector).show();
   }
+
+  $('.icon-menu3').on('click', () => {
+    $('ul').slideToggle('fast');
+  })
+
   module.render = (templateId, data) => {
     module.taskTemplate = Handlebars.compile($(`#${templateId}`).text());
     return module.taskTemplate(data);
