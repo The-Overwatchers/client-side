@@ -9,7 +9,7 @@ var app = app || {};
     context.replace(/\s/g,'-');
     $.get(`${app.ENVIRONMENT.apiUrl}/api/v1/games/${context}`)
       .then(result => callback(result))
-      .catch(console.log('ERROR'));
+      .catch(error => console.error(error));
   }
 
 
