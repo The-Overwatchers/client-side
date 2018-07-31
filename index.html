@@ -8,7 +8,29 @@
 
     <script id="results-template" type="text/x-handlebars-template">
       <section id="results-list">
-        <a href="game/{{id}}">{{name}}</a>
+        <a href="games/{{id}}">{{name}}</a>
+      </section>
+    </script>
+    <script id="details-template" type="text/x-handlebars-template">
+      <section id="details-container">
+        <ul>
+          <img src="https:{{cover.url}}">
+          <li>
+            {{name}}
+          </li>
+          <li>
+            {{genres}}
+          </li>
+          <li>
+            {{publishers}}
+          </li>
+          <li>
+            {{platforms}}
+          </li>
+          <li>
+            {{summary}}
+          </li>
+        </ul>
       </section>
     </script>
   </head>
@@ -23,10 +45,10 @@
 
   <main>
     <!-- All Pages: section paragraph for intro on each page  -->
-    <section id="search-input">
+    <section>
       <form action="#" id="search-bar">
         <label>
-          <input type="text" name="title" placeholder="Game Title" required>
+          <input type="text" name="title" placeholder="Game Title" id="search-input" required>
         </label>
         <button type="submit">Search Games</button>    
     </section>

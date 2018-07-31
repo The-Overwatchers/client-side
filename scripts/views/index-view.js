@@ -8,11 +8,12 @@ var app = app || {};
 
   indexView.init = () => {
     //This needs to match the id of the form
-    $('form').on('submit',  (function (event) {
+    $('#search-bar').on('submit',  (function (event) {
       event.preventDefault();
-      let requestedGame = $('#search-input').val;
+      let requestedGame = $('#search-input').val();
       app.Games.fetchResults(requestedGame, app.resultsView.showResults);
     }))
+    console.log('hello!')
   }
 
 
