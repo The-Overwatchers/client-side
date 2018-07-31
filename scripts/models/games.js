@@ -6,10 +6,10 @@ var app = app || {};
   let Games = {};
 
   Games.fetchResults = (context, callback) =>{
-    $.get(`/api/v1/games/${context}`)
-      .then(results => context.games = results)
-      .then(callback(context))
-      .catch(errorCallback);
+    context.replace(/\s/g,'-');
+    $.get(`${app.ENVIRONMENT.apiUrl}/api/v1/games/${context}`)
+      .then(result => callback(result))
+      .catch(console.log('ERROR'));
   }
 
 

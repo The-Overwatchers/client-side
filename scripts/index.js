@@ -22,5 +22,3 @@ var app = app || {};
   }
 
 })(app);
-
-app.indexView.init();

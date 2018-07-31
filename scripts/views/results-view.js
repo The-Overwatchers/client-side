@@ -6,9 +6,11 @@ var app = app || {};
   let resultsView = {};
 
   resultsView.showResults = context => {
+    $('#results').empty();
+    app.showOnly('#results');
     context.forEach((singleResult) => 
-      app.render('results-template', singleResult)
+     $('#results').append(app.render('results-template', singleResult))
   );
   }
-  
+  module.resultsView = resultsView;
 })(app);
