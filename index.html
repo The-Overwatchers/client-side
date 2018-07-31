@@ -2,6 +2,8 @@
   <head>
     <title>Game Inspector</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/icon.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
@@ -15,25 +17,28 @@
   <body>
 
   <header>
+    <img id="logo" src="styles/img/logo.jpg">
     <h1>GAME INSPECTOR</h1>
     <!-- Nav here drop down (hamburger menu) for HOME and ABOUT -->
     <!-- Header/Nav will be the same across all pages of app -->
-
+    <div id="icon-list">
+      <span class="icon-menu"></span>
+    </div>
   </header>
 
   <main>
     <!-- All Pages: section paragraph for intro on each page  -->
+    <section>
+      <div id="landing">Welcome to Game Inspector!  Select a platform and enter a title to see more information about your favorite video game.</div>
+      <!-- <div id="results">Results Div</div> -->
+      <!-- <div id="details">Details Div</div> -->
+    </section>
     <section id="search-input">
       <form action="#" id="search-bar">
         <label>
           <input type="text" name="title" placeholder="Game Title" required>
         </label>
         <button type="submit">Search Games</button>    
-    </section>
-    <section>
-      <div id="landing">landing Div</div>
-      <div id="results">Results Div</div>
-      <div id="details">Details Div</div>
     </section>
     <!-- Details Page: Main Content here... description of the game (title, release date, latest update, description, developers) -->
     <!-- All Pages: main content for that page -->

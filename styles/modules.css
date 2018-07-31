@@ -1,0 +1,47 @@
+/* COLOR PALETTE 
+    - #ffaa2f (orange) highlight color
+    - #e3e4e5 (light grey)
+    - #ada2a6 (lighter grey) background
+    - #584948 (darker grey) header
+    - #0f0603 (black) most text
+*/
+
+#logo {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+h1 {
+  color: #ffaa2f;
+  position: absolute;
+  text-align: center;
+  top: 28px;
+  left: 160px;
+  font-weight: bold;
+  font-size: 33px;
+}
+
+main {
+  width: 400px;
+  margin: 20px auto;
+}
+
+#landing {
+  font-weight: bold;
+}
+
+#search-bar {
+  width: 400px;
+  font-size: 50px;
+  margin-left: 30px;
+}
+
+button {
+  background-color: #ffaa2f;
+  color: #0f0603;
+  font-weight: bold;
+}
+
+input {
+  outline: #584948;
+}
