@@ -1,0 +1,14 @@
+/* COLOR PALETTE 
+    - #ffaa2f (orange) 
+    - #e3e4e5 (light grey)
+    - #ada2a6 (lighter grey) 
+    - #584948 (darker grey)
+    - #0f0603 (black)
+*/
+
+header {
+  height: 100px;
+  background-color: #584948;
+  position: relative;
+}
+
