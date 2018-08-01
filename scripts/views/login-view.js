@@ -28,6 +28,24 @@ var app = app || {};
     $('#alertMsg').append(app.render('alert-template', message));
   };
 
+  loginView.userSession = loginInfo => {
+    if(!!loginInfo.success) {
+      localStorage.setItem('user', null); // logout any former users
+      localStorage.setItem('user', loginInfo.myName); // login as new use
+      module.indexView.init();
+      $('#navLogin').hide();
+      $('#navLogout').show();
+    } else {
+      loginView.regAlert(loginInfo.string);
+    }
+  };
+
+  loginView.logout = () => {
+    localStorage.setItem('user', null);
+    $('#navLogin').show();
+    module.indexView.init();
+  };
+
   module.loginView = loginView;
 
 })(app);

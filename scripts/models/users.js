@@ -19,7 +19,7 @@ var app = app || {};
 
   Users.loginUser = (userName) => {
     $.get(`${app.ENVIRONMENT.apiUrl}/api/v1/user/login/${userName}`)
-      .then(result => console.log(result)) // append username to local storage
+      .then(result => app.loginView.userSession(result)) // append username to local storage
       .catch(error => console.error(error));
   };
 
