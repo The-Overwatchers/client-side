@@ -20,9 +20,10 @@
       <section id="details-container">
         <ul>
           <img src="https:{{cover.url}}">
-          <li>{{name}}</li>
+          <li id="favGameName">{{name}}</li>
           <li>{{publishers}}</li>
           <li>{{summary}}</li>
+          <button id="favGameId" data={{id}}>Favorite</button>
         </ul>
       </section>
     </script>
@@ -41,7 +42,7 @@
     <!-- Header/Nav will be the same across all pages of app -->
     <div id="icon-list">
       <span class="icon-menu3"></span>
-      <ul>
+      <ul class="login-link">
         <li><a href="/login">LOGIN</a></li>
       </ul>
     </div>
