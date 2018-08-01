@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/icon.css">
     
+    <!-- Results -->
     <script id="results-template" type="text/x-handlebars-template">
       <section id="results-list">
         <a href="games/{{id}}">{{name}}</a>
       </section>
     </script>
+
+    <!-- Details -->
     <script id="details-template" type="text/x-handlebars-template">
       <section id="details-container">
         <ul>
@@ -22,6 +25,11 @@
           <li>{{summary}}</li>
         </ul>
       </section>
+    </script>
+
+    <!-- Alert Message -->
+    <script id="alert-template" type="text/x-handlebars-template">
+      <p>{{alert}}</p>
     </script>
   </head>
   <body>
@@ -81,6 +89,8 @@
           <button type="submit">Login</button>
         </form>
       </div>
+
+      <div class="alert-message" id="alertMsg"></div>
     </section>
 
     <!-- My Account -->
