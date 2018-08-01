@@ -9,6 +9,7 @@ var app = app || {};
   indexView.init = () => {
     //This needs to match the id of the form
     app.showOnly('.landing');
+    $('#navLogout').hide();
     $('#search-bar').on('submit', (function (event) {
       event.preventDefault();
       let requestedGame = $('#search-input').val();
