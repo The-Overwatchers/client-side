@@ -29,15 +29,21 @@ var app = app || {};
   };
 
   loginView.userSession = loginInfo => {
-    if(!!loginInfo.success) {
+    if(!!loginInfo.success) { // eslint-disable-line
       localStorage.setItem('user', null); // logout any former users
-      localStorage.setItem('user', loginInfo.myName); // login as new use
+      localStorage.setItem('user', loginInfo.myName);
+      $('#navLogout').hide();// login as new use
       module.indexView.init();
       $('#navLogin').hide();
       $('#navLogout').show();
     } else {
       loginView.regAlert(loginInfo.string);
     }
+  };
+
+  loginView.loginPersist = () => {
+    $('#navLogin').hide();
+    $('#navLogout').show();
   };
 
   loginView.logout = () => {

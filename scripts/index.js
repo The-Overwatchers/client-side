@@ -19,7 +19,7 @@ var app = app || {};
   }
 
   $('.icon-menu3').on('click', () => {
-    $('ul').slideToggle('fast');
+    $('.login-link').slideToggle('fast');
   })
 
   module.render = (templateId, data) => {
