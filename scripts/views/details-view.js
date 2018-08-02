@@ -15,10 +15,17 @@ var app = app || {};
     app.showOnly('.details');
     context[0].cover_url = context[0].cover.url;
     $('#details').append(app.render('details-template', context[0]));
-  };
-
-  detailsView.singleGameFav = context => {
-    
+    $('#favGameId').on('click', function (event) {
+      event.preventDefault();
+      let newFavGame = {};
+      newFavGame.name = $('#favGameName').text();
+      newFavGame.igdb_id = $('#favGameId').data('id');
+      newFavGame.user = localStorage.getItem('user');
+      app.Games.favOneGame(newFavGame);
+    })
+    if(localStorage.getItem('user') === 'null') {
+      $('#favGameId').hide();
+    }
   };
 
   module.detailsView = detailsView;
