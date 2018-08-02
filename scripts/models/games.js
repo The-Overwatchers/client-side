@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var app = app || {};
 
@@ -13,11 +13,13 @@ var app = app || {};
   };
 
   Games.favOneGame = (context, callback) => {
-    $.post(`${app.ENVIRONMENT.apiUrl}/api/v1/favorite`, {
+    let favObject = {
       name: context.name,
       user: context.user,
-      igdb_id: context.igdb_id})
-      .then(result => callback(result))
+      igdb_id: context.igdb_id
+    };
+    $.post(`${app.ENVIRONMENT.apiUrl}/api/v1/favorite`, favObject)
+      .then(result => console.log(result))
       .catch(error => console.error(error));
   };
 
