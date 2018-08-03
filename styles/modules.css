@@ -7,73 +7,127 @@
 */
 
 #logo {
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 18px;
+  margin-left: 15px;
 }
 
 h1 {
   color: #ffaa2f;
   position: absolute;
-  text-align: center;
-  top: 28px;
-  left: 160px;
-  font-weight: bold;
-  font-size: 33px;
+  top: 34px;
+  left: 114px;
+  font-size: 29px;
+  font-family: 'Russo One', sans-serif;
 }
 
 main {
   width: 400px;
   margin: 20px auto;
+  font-family: 'Comfortaa', cursive;
 }
 
+
+/* LANDING PAGE */
 #landing {
-  font-weight: bold;
+  margin-top: 50px;
+}
+
+#search-intro, #signup-intro, #results-intro {
+  margin-top: 10px;
 }
 
 #search-bar {
   width: 400px;
   font-size: 50px;
-  margin-left: 30px;
 }
 
-button {
+#search-button {
   background-color: #ffaa2f;
-  color: #0f0603;
-  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  text-transform: lowercase;
 }
 
-input {
-  outline: #584948;
+#search-input {
+  font-size: 23px;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding-left: 5px;
+  text-transform: lowercase;
 }
-
 
 #icon-list ul {
-  display: none;
   display: block;
-  color: #ffaa2f;
-  background-color: #584948;
   text-align: right;
   position: absolute;
   top: 100px;
-  width: 100%;
-  margin-right: 70px;
+  width: 97%;
 }
 
 a {
   text-decoration: none;
   color: #ffaa2f;
-  font-size: 20px;
+  font-weight: bold;
+  font-size: 15px;
 }
 
-.icon-menu3:before {
+.icon-menu:before {
   color: #ffaa2f;
   position: absolute;
-  top: 5px;
-  right: 10px;
-  font-size: 47px;
+  top: 28px;
+  right: 15px;
+  font-size: 40px;
 }
 
-/* Alert Message */
-/* .alert-message {
-  display: none;
+.login-link {
+  background-color: rgb(128, 123, 136);
+  text-transform: lowercase;
+  margin-right: 15px;
+  padding: 5px 15px 5px 0;
+}
+
+#navLogin {
+  padding-right: 3px;
+}
+
+/* LOGIN/REGISTER PAGE */
+#formRegister {
+  margin-top: 20px;
+}
+
+#inputRegister, #inputLogin {
+  font-size: 20px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  padding-left: 5px;
+  text-transform: lowercase;
+}
+
+#register {
+  margin-top: 50px;
+}
+
+ /* {
+  margin-top: 10px;
 } */
+
+#login-button, #register-button {
+  font-size: 20px;
+  background-color: #ffaa2f;
+  border-radius: 10px;
+  width: 25%;
+  text-transform: lowercase;
+}
+
+#alertMsg {
+  margin-top: 20px;
+}
+
+/* RESULTS PAGE */
+/* {
+  margin-top: 10px;
+} */
+
+
+/* DETAILS PAGE */
