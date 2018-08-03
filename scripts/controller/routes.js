@@ -1,8 +1,8 @@
 'use strict';
 
-if(window.location.pathname !== '/'){
-  page.base('/client-side');
-}
+// if(window.location.pathname !== '/'){
+//   page.base('/client-side');
+// }
 page('client-side/', ctx => app.indexView.init(ctx));
 page('client-side/games/:id', ctx => app.detailsView.init(ctx));
 page('client-side/login', ctx => app.loginView.init(ctx));
