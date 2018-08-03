@@ -5,18 +5,22 @@ var app = app || {};
 (function(module){
   let loginView = {};
 
+  // Initialize Page
   loginView.init = context => {
+    $('.login-link').hide();
     $('#inputLogin').empty();
     $('#inputRegister').empty();
     module.showOnly('.login');
     $('#formRegister').on('submit', function(event) {
       event.preventDefault();
       let newUserName = $('#inputRegister').val();
+      $('#inputRegister').val('');
       app.Users.registerUser(newUserName);
     });
     $('#formLogin').on('submit', function(event) {
       event.preventDefault();
       let userName = $('#inputLogin').val();
+      $('#inputLogin').val('');
       app.Users.loginUser(userName);
     });
   };
@@ -46,6 +50,7 @@ var app = app || {};
   loginView.loginPersist = () => {
     $('#navLogin').hide();
     $('#navLogout').show();
+    $('#navFav').show();
   };
 
   loginView.logout = () => {
