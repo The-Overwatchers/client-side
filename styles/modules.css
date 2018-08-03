@@ -204,6 +204,23 @@ a {
   font-weight: 700;
 }
 .game-text {
-  margin-top: 100px;
   font-size: 17px;
+}
+
+.about h2 {
+  font-size: 25px;
+  margin-top: 25px;
+}
+
+.about ul {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+.about li {
+  list-style-type: circle;
+  margin-left: 15px;
+}
+
+.about li a {
+  color: #000;
 }
