@@ -18,9 +18,10 @@ var app = app || {};
     $(selector).show();
   }
 
-  $('.icon-menu3').on('click', () => {
+  $('.icon-menu').on('click', () => {
     $('.login-link').slideToggle('fast');
   })
+
 
   module.render = (templateId, data) => {
     module.taskTemplate = Handlebars.compile($(`#${templateId}`).text());
