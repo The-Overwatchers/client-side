@@ -2,73 +2,166 @@
   <head>
     <title>Game Inspector</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
-
+    <link rel="stylesheet" href="styles/icon.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+  
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    
+    <!-- Results -->
     <script id="results-template" type="text/x-handlebars-template">
       <section id="results-list">
         <a href="games/{{id}}">{{name}}</a>
       </section>
     </script>
+
+    <!-- Details -->
     <script id="details-template" type="text/x-handlebars-template">
       <section id="details-container">
         <ul>
           <img src="https:{{cover.url}}">
-          <li>
-            {{name}}
-          </li>
-          <li>
-            {{genres}}
-          </li>
-          <li>
-            {{publishers}}
-          </li>
-          <li>
-            {{platforms}}
-          </li>
-          <li>
-            {{summary}}
+          <li id="favGameName">{{name}}</li>
+          <li>{{publishers}}</li>
+          <li>{{summary}}</li>
+          <button id="favGameId" data-id={{id}}>Favorite</button>
+        </ul>
+      </section>
+    </script>
+
+    <!-- Favorites -->
+    <script id="favorites-template" type="text/x-handlebars-template">
+      <section id="favoriteContainer">
+        <ul>
+          <li id='{{id}}'>
+            <img src="https:{{cover.url}}">
+            <button class="removeFav" data-id={{id}}>Remove</button>
           </li>
         </ul>
       </section>
+    </script>
+
+    <!-- Alert Message -->
+    <script id="alert-template" type="text/x-handlebars-template">
+      <p>{{alert}}</p>
     </script>
   </head>
   <body>
 
   <header>
+    <a href="/"><img id="logo" src="styles/img/goodLogo.png"></a>
     <h1>GAME INSPECTOR</h1>
     <!-- Nav here drop down (hamburger menu) for HOME and ABOUT -->
     <!-- Header/Nav will be the same across all pages of app -->
-
+    <div id="icon-list">
+      <span class="icon-menu"></span>
+      <ul class="login-link">
+        <li><a href="/login" id="navLogin">Login / Register</a></li>
+        <li><a href="/logout" id="navLogout">Logout</a></li>
+        <li><a href="/favorites" id="navFav">Favorites</a></li>
+        <li><a href="/about" id="navAbout">About</a></li>
+      </ul>
+    </div>
   </header>
 
   <main>
-    <!-- All Pages: section paragraph for intro on each page  -->
-    <section>
-      <form action="#" id="search-bar">
-        <label>
-          <input type="text" name="title" placeholder="Game Title" id="search-input" required>
-        </label>
-        <button type="submit">Search Games</button>    
+    <!-- Landing Page -->
+    <section class="landing section">
+      <div id="landing">
+        <p>Welcome to Game Inspector!</p> 
+        <p id="search-intro">Enter a title below to see more information about your favorite video game.</p>
+        <form action="#" id="search-bar">
+          <label>
+            <input type="text" name="title" placeholder="Game Title" id="search-input" required>
+          </label>
+          <button id="search-button" type="submit">Search</button>
+        </form>
+      </div>
     </section>
-    <section>
-      <div id="landing">landing Div</div>
-      <div id="results">Results Div</div>
-      <div id="details">Details Div</div>
+
+    <!-- Results Page -->
+    <section class="results section">
+      <div id="results">
+        <p id="results-intro">Displaying results for GAMENAME HERE.  Click here to search again.</p>
+      </div>
     </section>
-    <!-- Details Page: Main Content here... description of the game (title, release date, latest update, description, developers) -->
-    <!-- All Pages: main content for that page -->
-    <!-- Home page: first box is drop down including platforms for user to choose from  -->
-    <!-- Home page: second box is text input box to search for game (auto complete?STRETCH) -->
-    <!--  -->
-    <!-- Search/Go Button by input box -->
+
+    <!-- Game Page -->
+    <section class="details section">
+      <div id="details">
+        <p id="details-intro">Displaying information for GAMENAME HERE.  Click here to search again.</p>
+      </div>
+    </section>
+
+    <!-- User Login -->
+    <section class="login section">
+      <div id="register">
+        <p>Thank you for visiting Game Inspector!</p>
+        <p id="signup-intro">Please sign in with your name.  If you do not have an account, please feel free to register below!</p>
+        <form action="#" id="formRegister">
+          <label>
+            <input type="text" name="title" placeholder="Username" id="inputRegister" required>
+          </label>
+          <button id="register-button" type="submit">Register</button>
+        </form>
+      </div>
+
+      <div id="login">
+        <form action="#" id="formLogin">
+          <label>
+            <input type="text" name="title" placeholder="Username" id="inputLogin" required>
+          </label>
+          <button id="login-button" type="submit">Login</button>
+        </form>
+      </div>
+
+      <div class="alert-message" id="alertMsg"></div>
+    </section>
+
+    <!-- My Account -->
+    <section class="account section">
+      <div id="account">
+        <p>Hello USERNAME HERE!  Displayed below are your favorite games.</p>
+        
+      </div>
+    </section>
+    <section class="favorites section">
+      <div id="favorites">
+        <!-- do stuff here -->
+      </div>
+    </section>
+
+
+  <!-- About Page -->
+    <section class="about section">
+      <div id="about">
+        <p class="about-header">Welcome to Game Inspector. This application lets you search for game information by title and platform.</p>
+        <h1>Team</h1>
+        <ul class="about-team">
+          <li><a href="https://www.github.com/harrishills">Ben Harris</a></li>
+          <li><a href="https://www.github.com/cheyna22">Cheyna Humphries</a></li>
+          <li><a href="https://www.github.com/maxmcf">Max McFarland</a></li>
+        </ul>
+        <h1>Technologies</h1>
+        <ul class="about-tech">
+          <li>IGDB API</li>
+          <li>Node/Express</li>
+          <li>Handlebars.js</li>
+          <li>jQuery</li>
+          <li>PostgreSQL</li>
+          <li>Heroku</li>
+          <li>GitHub</li>
+          <li>Coffee!</li>
+        </ul>
+      </div>
+    </section>
 
   </main>
 
   <footer>
-    <!-- Footer of the page goes here, add linkedIn links (maybe copyright to look fancy) -->
-    <!-- Footer will be the same across all pages -->
+    <p id="copyright">&copy;Copyright 2018</p>
 
   </footer>
 
@@ -77,10 +170,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.8.6/page.min.js"></script>
 
   <script src="scripts/models/games.js" type="text/javascript"></script>
+  <script src="scripts/models/users.js" type="text/javascript"></script>
+  <script src="scripts/index.js" type="text/javascript"></script>
   <script src="scripts/views/details-view.js" type="text/javascript"></script>
   <script src="scripts/views/index-view.js" type="text/javascript"></script>
   <script src="scripts/views/results-view.js" type="text/javascript"></script>
-  <script src="scripts/index.js" type="text/javascript"></script>
+  <script src="scripts/views/login-view.js" type="text/javascript"></script>
+  <script src="scripts/views/about-view.js" type="text/javascript"></script>
+  <script src="scripts/views/favorites-view.js" type="text/javascript"></script>
   <script src="scripts/controller/routes.js" type="text/javascript"></script>
 
 

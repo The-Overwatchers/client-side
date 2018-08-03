@@ -7,10 +7,10 @@ var app = app || {};
 
   resultsView.showResults = context => {
     $('#results').empty();
-    app.showOnly('#results');
+    app.showOnly('.results');
     context.forEach((singleResult) => 
-     $('#results').append(app.render('results-template', singleResult))
-  );
+      $('#results').append(app.render('results-template', singleResult))
+    );
   }
   module.resultsView = resultsView;
 })(app);

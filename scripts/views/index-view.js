@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var app = app || {};
 
@@ -8,13 +8,20 @@ var app = app || {};
 
   indexView.init = () => {
     //This needs to match the id of the form
-    $('#search-bar').on('submit',  (function (event) {
+    app.showOnly('.landing');
+    let userPersist = localStorage.getItem('user');
+
+    if(userPersist !== 'null') { // eslint-disable-line
+      app.loginView.loginPersist();
+    } else {
+      $('#navLogout').hide();
+    }
+    $('#search-bar').on('submit', (function (event) {
       event.preventDefault();
       let requestedGame = $('#search-input').val();
       app.Games.fetchResults(requestedGame, app.resultsView.showResults);
-    }))
-    console.log('hello!')
-  }
+    }));
+  };
 
 
 module.indexView = indexView;

@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 var app = app || {};
 
@@ -12,10 +12,17 @@ var app = app || {};
   module.ENVIRONMENT = {
     apiUrl: module.isProduction ? productionApiUrl : developmentApiUrl
   };
+
   module.showOnly = (selector) => {
-    $('.hide-all').hide();
+    $('section').hide();
     $(selector).show();
   }
+
+  $('.icon-menu').on('click', () => {
+    $('.login-link').slideToggle('fast');
+  })
+
+
   module.render = (templateId, data) => {
     module.taskTemplate = Handlebars.compile($(`#${templateId}`).text());
     return module.taskTemplate(data);
