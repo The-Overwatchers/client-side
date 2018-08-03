@@ -43,5 +43,22 @@ var app = app || {};
         app.favoritesView.init();
       });
   };
+
+  // Games.getRecc = (callback) => {
+  //   let idsArray = [];
+  //   let elementArray = document.getElementsByClassName('removeFav');
+  //   console.log(elementArray);
+  //   console.log(elementArray[0].getAttribute('data-id'));
+  //   for(let i; i < elementArray.length; i++){
+  //     idsArray.push(elementArray[i].getAttribute('data-id'));
+  //     console.log(elementArray[i].getAttribute('data-id'));
+  //   }
+  //   console.log(idsArray);
+  //   $.post(`${app.ENVIRONMENT.apiUrl}/api/v1/recommend`, idsArray)
+  //     .then(result => {
+  //       callback(result);
+  //     });
+  // };
+
   module.Games = Games;
 })(app);
