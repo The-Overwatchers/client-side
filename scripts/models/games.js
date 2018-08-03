@@ -23,5 +23,25 @@ var app = app || {};
       .catch(error => console.error(error));
   };
 
+  Games.getFavCovers = (callback) => {
+    let user = {};
+    user.id = localStorage.getItem('id');
+    $.get(`${app.ENVIRONMENT.apiUrl}/api/v1/favorite/${user.id}`)
+      .then(result => {
+        callback(result);
+      });
+  };
+
+  Games.removeFav = (gameUserIds) => {
+    $.ajax({
+      method: "DELETE",
+      url: `${app.ENVIRONMENT.apiUrl}/api/v1/favorite/delete`,
+      data: gameUserIds
+    })
+      .then(result => {
+        // console.log(result);
+        app.favoritesView.init();
+      });
+  };
   module.Games = Games;
 })(app);

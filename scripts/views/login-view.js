@@ -32,6 +32,8 @@ var app = app || {};
     if(!!loginInfo.success) { // eslint-disable-line
       localStorage.setItem('user', null); // logout any former users
       localStorage.setItem('user', loginInfo.myName);
+      localStorage.setItem('id', null);
+      localStorage.setItem('id', loginInfo.userId);
       $('#navLogout').hide();// login as new use
       module.indexView.init();
       $('#navLogin').hide();
@@ -48,6 +50,7 @@ var app = app || {};
 
   loginView.logout = () => {
     localStorage.setItem('user', null);
+    localStorage.setItem('id', null);
     $('#navLogin').show();
     module.indexView.init();
   };
