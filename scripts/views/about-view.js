@@ -6,6 +6,7 @@ var app = app || {};
   let aboutView = {};
 
   aboutView.init = () => {
+    $('.login-link').hide();
     app.showOnly('.about');
   };
 

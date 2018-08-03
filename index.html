@@ -20,14 +20,16 @@
 
     <!-- Details -->
     <script id="details-template" type="text/x-handlebars-template">
-      <section id="details-container">
-        <ul>
-          <img src="https:{{cover.url}}">
-          <li id="favGameName">{{name}}</li>
-          <li>{{publishers}}</li>
-          <li>{{summary}}</li>
-          <button id="favGameId" data-id={{id}}>Favorite</button>
-        </ul>
+      <section id="details-container" class="section-details">
+        <img src="https:{{cover.url}}">
+        <div class="details">
+          <ul>
+            <li class="game-head" id="favGameName">{{name}}</li>
+            <li class="game-pub">{{publishersDisplay}}</li>
+            <li class="game-fav"><button id="favGameId" data-id={{id}}>Favorite</button></li>
+          </ul>
+        </div>
+        <p>{{summary}}</p>
       </section>
     </script>
 
@@ -38,6 +40,17 @@
           <li id='{{id}}'>
             <img src="https:{{cover.url}}">
             <button class="removeFav" data-id={{id}}>Remove</button>
+          </li>
+        </ul>
+      </section>
+    </script>
+
+    <!-- Recommendations -->
+    <script id="recc-template" type="text/x-handlebars-template">
+      <section id="reccContainer">
+        <ul>
+          <li id='{{id}}'>
+            <img src="https:{{cover.url}}">
           </li>
         </ul>
       </section>
@@ -83,8 +96,8 @@
 
     <!-- Results Page -->
     <section class="results section">
-      <div id="results">
-        <p id="results-intro">Displaying results for GAMENAME HERE.  Click here to search again.</p>
+      <p id="results-intro">Displaying results.  Click <a href="/">here</a> to search again.</p>
+      <div id="results" class="results-div">
       </div>
     </section>
 
@@ -127,12 +140,22 @@
         
       </div>
     </section>
+
+    <!-- Favorites -->
     <section class="favorites section">
+      <p>Displayed below are the games you selected as your favorites.</p>
       <div id="favorites">
         <!-- do stuff here -->
       </div>
     </section>
 
+    <!-- Recommendations -->
+    <section class="recc section">
+      <button id="showFav"></button>
+      <div id="recc">
+        <!-- do stuff here -->
+      </div>
+    </section>
 
   <!-- About Page -->
     <section class="about section">
@@ -160,10 +183,9 @@
 
   </main>
 
-  <footer>
+  <!-- <footer>
     <p id="copyright">&copy;Copyright 2018</p>
-
-  </footer>
+  </footer> -->
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>

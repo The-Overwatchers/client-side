@@ -20,7 +20,7 @@ var app = app || {};
 
   $('.icon-menu').on('click', () => {
     $('.login-link').slideToggle('fast');
-  })
+  });
 
 
   module.render = (templateId, data) => {
