@@ -26,7 +26,7 @@
           <ul>
             <li class="game-head" id="favGameName">{{name}}</li>
             <li class="game-pub">{{publishersDisplay}}</li>
-            <li class="game-fav"><button id="favGameId" data-id={{id}}>Favorite</button></li>
+            <li class="game-fav"><button id="favGameId" data-id={{id}} data-theme={{themes}} data-genre={{genres}}>Favorite</button></li>
           </ul>
         </div>
         <p class="game-text">{{summary}}</p>
@@ -144,6 +144,7 @@
     <!-- Favorites -->
     <section class="favorites section">
       <p>Displayed below are the games you selected as your favorites.</p>
+      <button id="recommend-button" type="submit">Suggestions</button>
       <div id="favorites">
         <!-- do stuff here -->
       </div>
