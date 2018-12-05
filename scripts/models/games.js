@@ -21,7 +21,6 @@ var app = app || {};
       genres: context.genres,
       publishers: context.publishers,
     };
-    console.log(favObject)
     $.post(`${app.ENVIRONMENT.apiUrl}/api/v1/favorite`, favObject)
       .then(result => console.log(result))
       .catch(error => console.error(error));
@@ -75,9 +74,9 @@ var app = app || {};
         $.post(`${app.ENVIRONMENT.apiUrl}/api/v1/recommend`, commonIds)
           .then(result => {
             callback(result);})
-          .catch(error => console.log(error))
+          .catch(error => console.error(error))
       })
-      .catch(error => console.log(error))
+      .catch(error => console.error(error))
   };
 
   Games.getModeOfFavs = (category) => {
@@ -90,7 +89,6 @@ var app = app || {};
     let commonCategory = 0;
     category.forEach(element => {
       if(Number.isInteger(element)) {
-        console.log(element)
         if(commonCategoryObj[element] == null){
           commonCategoryObj[element] = 1;
         }else{

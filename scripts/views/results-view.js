@@ -9,7 +9,6 @@ var app = app || {};
     $('#results').empty();
     app.showOnly('.results');
     context.forEach((singleResult) => {
-      console.log(singleResult);
       $('#results').append(app.render('results-template', singleResult))
     });
   }
@@ -18,7 +17,6 @@ var app = app || {};
     $('#results').empty();
     app.showOnly('.results');
     context.forEach((singleResult) => {
-      console.log(singleResult);
       $('#results').append(app.render('recommend-template', singleResult))
     });
   }

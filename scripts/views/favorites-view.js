@@ -36,7 +36,7 @@ var app = app || {};
     });
   };
 
-  // // Generate Recommendations
+  // Initializes Reccommend Feature
   favoritesView.reccInit = context => {
     $('#reccView').empty();
     app.showOnly('.recc');
@@ -45,12 +45,6 @@ var app = app || {};
       event.preventDefault();
       favoritesView.init();
     })
-  };
-
-  // // Initialize Favorites
-  favoritesView.showRecc = (recGames) => {
-    console.log(recGames)
-    // still in progres...
   };
 
   module.favoritesView = favoritesView;
