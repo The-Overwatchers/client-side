@@ -40,7 +40,7 @@ var app = app || {};
   favoritesView.reccInit = context => {
     $('#reccView').empty();
     app.showOnly('.recc');
-    app.Games.getRecc(app.resultsView.showResults);
+    app.Games.getRecc(app.resultsView.showRecommend);
     $('#showFav').on('click', function(event) {
       event.preventDefault();
       favoritesView.init();

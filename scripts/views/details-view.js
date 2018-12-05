@@ -23,6 +23,7 @@ var app = app || {};
       newFavGame.igdb_id = $('#favGameId').data('id');
       newFavGame.themes = $('#favGameId').data('theme');
       newFavGame.genres = $('#favGameId').data('genre');
+      newFavGame.publishers = $('#favGameId').data('publisher');
       newFavGame.user = localStorage.getItem('user');
       app.Games.favOneGame(newFavGame);
     })

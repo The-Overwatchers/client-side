@@ -18,6 +18,13 @@
       </section>
     </script>
 
+    <!-- Recommended -->
+    <script id="recommend-template" type="text/x-handlebars-template">
+      <section id="recommend-list">
+        <a href="games/{{id}}">{{name}}</a>
+      </section>
+    </script>
+
     <!-- Details -->
     <script id="details-template" type="text/x-handlebars-template">
       <section id="details-container" class="section-details">
@@ -26,7 +33,7 @@
           <ul>
             <li class="game-head" id="favGameName">{{name}}</li>
             <li class="game-pub">{{publishersDisplay}}</li>
-            <li class="game-fav"><button id="favGameId" data-id={{id}} data-theme={{themes}} data-genre={{genres}}>Favorite</button></li>
+            <li class="game-fav"><button id="favGameId" data-id={{id}} data-theme={{themes}} data-genre={{genres}} data-publisher={{publishers}}>Favorite</button></li>
           </ul>
         </div>
         <p class="game-text">{{summary}}</p>
