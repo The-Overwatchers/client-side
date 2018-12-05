@@ -8,9 +8,19 @@ var app = app || {};
   resultsView.showResults = context => {
     $('#results').empty();
     app.showOnly('.results');
-    context.forEach((singleResult) => 
+    context.forEach((singleResult) => {
+      console.log(singleResult);
       $('#results').append(app.render('results-template', singleResult))
-    );
+    });
+  }
+
+  resultsView.showRecommend = context => {
+    $('#results').empty();
+    app.showOnly('.results');
+    context.forEach((singleResult) => {
+      console.log(singleResult);
+      $('#results').append(app.render('recommend-template', singleResult))
+    });
   }
   module.resultsView = resultsView;
 })(app);

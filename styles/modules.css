@@ -51,6 +51,14 @@ main {
   text-transform: lowercase;
 }
 
+#reccomend-button {
+  background-color: #ffaa2f;
+  font-size: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  text-transform: lowercase;
+}
+
 #search-input {
   font-size: 23px;
   border-radius: 10px;

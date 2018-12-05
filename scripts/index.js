@@ -12,7 +12,6 @@ var app = app || {};
   module.ENVIRONMENT = {
     apiUrl: module.isProduction ? productionApiUrl : developmentApiUrl
   };
-
   module.showOnly = (selector) => {
     $('section').hide();
     $(selector).show();

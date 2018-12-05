@@ -10,15 +10,19 @@ var app = app || {};
     $('.login-link').hide();
     $('#favorites').empty();
     module.showOnly('.favorites');
+    $('#recommend-button').hide()
     app.Games.getFavCovers(app.favoritesView.showCovers);
-    $('#showRecc').on('click', function(event) {
+    $('#recommend-button').on('click', function(event) {
       event.preventDefault();
       favoritesView.reccInit();
     });
   };
 
   // Display Favorites
-  favoritesView.showCovers = (coversArray) => {
+  favoritesView.showCovers = (coversArray, favThreshold) => {
+    if(favThreshold.moreThanFour != false){
+      $('#recommend-button').show()
+    }
     coversArray.forEach(cover => {
       $('#favorites').append(app.render('favorites-template', cover));
     });
@@ -33,20 +37,21 @@ var app = app || {};
   };
 
   // // Generate Recommendations
-  // favoritesView.reccInit = context => {
-  //   $('#reccView').empty();
-  //   app.showOnly('.recc');
-  //   app.Games.getRecc(favoritesView.showRecc);
-  //   $('#showFav').on('click', function(event) {
-  //     event.preventDefault();
-  //     favoritesView.init();
-  //   })
-  // };
+  favoritesView.reccInit = context => {
+    $('#reccView').empty();
+    app.showOnly('.recc');
+    app.Games.getRecc(app.resultsView.showRecommend);
+    $('#showFav').on('click', function(event) {
+      event.preventDefault();
+      favoritesView.init();
+    })
+  };
 
   // // Initialize Favorites
-  // favoritesView.showRecc = (recGames) => {
-  //   // still in progres...
-  // };
+  favoritesView.showRecc = (recGames) => {
+    console.log(recGames)
+    // still in progres...
+  };
 
   module.favoritesView = favoritesView;
 })(app);

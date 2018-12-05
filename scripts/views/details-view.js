@@ -17,9 +17,13 @@ var app = app || {};
     $('#details').append(app.render('details-template', context[0]));
     $('#favGameId').on('click', function (event) {
       event.preventDefault();
+      console.log(context)
       let newFavGame = {};
       newFavGame.name = $('#favGameName').text();
       newFavGame.igdb_id = $('#favGameId').data('id');
+      newFavGame.themes = $('#favGameId').data('theme');
+      newFavGame.genres = $('#favGameId').data('genre');
+      newFavGame.publishers = $('#favGameId').data('publisher');
       newFavGame.user = localStorage.getItem('user');
       app.Games.favOneGame(newFavGame);
     })
